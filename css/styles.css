@@ -423,9 +423,6 @@ img {
 
 .logo-text {
   margin-right: 120px;
-}
-
-.logo-text-list {
   display: flex;
   flex-direction: column;
 }
