@@ -343,10 +343,11 @@ img {
 }
 
 .icon {
-  fill: var(--white);
+  fill: var(--light);
 }
 
-.media-links:hover {
+.media-links:hover,
+.media-links:focus {
   background-color: var(--pressed-state);
 }
 
@@ -396,7 +397,7 @@ img {
 }
 
 .examples-list:hover .overlay {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 .examples-text {
@@ -417,12 +418,16 @@ img {
 .footer .container {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .logo-text {
+  margin-right: 120px;
+}
+
+.logo-text-list {
   display: flex;
   flex-direction: column;
-  margin-right: 120px;
 }
 
 .logo-text .logo {
@@ -457,7 +462,8 @@ img {
   height: 24px;
 }
 
-.footer .media-links:hover {
+.footer .media-links:hover,
+.footer .media-links:focus {
   background-color: var(--success);
 }
 
