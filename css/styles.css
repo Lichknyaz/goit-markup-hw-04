@@ -95,6 +95,8 @@ img {
 /* #region Header */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -129,23 +131,25 @@ img {
   position: relative;
 }
 
+.nav-anchor.selected {
+  color: var(--pressed-state);
+}
+
 .nav-anchor:hover,
 .nav-anchor:active,
 .nav-anchor:focus {
   color: var(--pressed-state);
 }
 
-.nav-anchor:hover::after,
-.nav-anchor:active::after,
-.nav-anchor:focus::after {
+.nav-anchor.selected::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -1px;
   background-color: var(--pressed-state);
   border-radius: 2px;
-  width: 48px;
   height: 4px;
+  width: 100%;
 }
 
 .contact {
@@ -193,7 +197,9 @@ img {
     url(../images/people-office.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover, 1440px;
+  background-size: cover;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .solutions .container {
@@ -275,11 +281,6 @@ img {
   fill: var(--dark);
 }
 
-.overview-icon {
-  width: 64px;
-  height: 64px;
-}
-
 /* #endregion */
 
 /* #region Our Team */
@@ -303,7 +304,7 @@ img {
 }
 
 .team-name {
-  padding: 32px 0 8px;
+  padding: 32px 0;
 }
 
 .team-third-header {
@@ -312,36 +313,40 @@ img {
 
 .team-text {
   text-align: center;
+  padding-bottom: 8px;
 }
 
 .icons-list {
   display: flex;
   gap: 24px;
   justify-content: center;
-  padding: 0 16px 32px;
+  padding: 0 16px;
   flex-shrink: 0;
 }
 
 .media-icons {
   padding: 0;
   margin: 0;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
+}
+
+.media-links {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   background-color: var(--primary-brand);
-  fill: var(--white);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon.small {
-  width: 16px;
-  height: 16px;
+.icon {
+  fill: var(--white);
 }
 
-.team-photo:hover .media-icons {
+.media-links:hover {
   background-color: var(--pressed-state);
 }
 
@@ -436,7 +441,7 @@ img {
 }
 
 .social-media-text {
-  color: var(--light);
+  color: var(--white);
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -452,7 +457,7 @@ img {
   height: 24px;
 }
 
-.media-icons:hover {
+.footer .media-links:hover {
   background-color: var(--success);
 }
 
